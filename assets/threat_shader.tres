@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://45kwpnf8gcul"]
+
+[ext_resource type="Shader" path="res://assets/godot_retro/Screen Shaders/VHS.gdshader" id="1_tkfxm"]
+
+[resource]
+shader = ExtResource("1_tkfxm")
+shader_parameter/tape_wave_amount = 0.0
+shader_parameter/tape_crease_amount = 0.0
+shader_parameter/color_displacement = 0.0
+shader_parameter/lines_velocity = 5.0

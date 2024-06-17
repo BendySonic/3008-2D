@@ -1,0 +1,105 @@
+[gd_scene load_steps=13 format=3 uid="uid://4d4vja1kguyj"]
+
+[ext_resource type="PackedScene" uid="uid://bj1p2hk238wdk" path="res://src/main/furniture/base_furniture.tscn" id="1_bbbp3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_b2p6u"]
+size = Vector2(130, 45)
+
+[sub_resource type="QuadMesh" id="QuadMesh_o2qk2"]
+size = Vector2(50, 45)
+
+[sub_resource type="QuadMesh" id="QuadMesh_0wij3"]
+size = Vector2(75, 35)
+
+[sub_resource type="QuadMesh" id="QuadMesh_poene"]
+size = Vector2(25, 25)
+
+[sub_resource type="QuadMesh" id="QuadMesh_4n2mr"]
+size = Vector2(100, 10)
+
+[sub_resource type="QuadMesh" id="QuadMesh_46c2b"]
+size = Vector2(15, 5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_5k245"]
+size = Vector2(8, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr6gy"]
+size = Vector2(125, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tl7s"]
+size = Vector2(40, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3pw6"]
+size = Vector2(80, 40)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mqhnl"]
+polygon = PackedVector2Array(-64, -23, -64, 23, -52, 23, 65, 23, 65, 13, 115, 13, 115, 23, 166, 23, 164, -23)
+
+[node name="LongTable" instance=ExtResource("1_bbbp3")]
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="0" groups=["navigation_polygon_source_group"]]
+visible = false
+polygon = PackedVector2Array(-65, -25, -63, 23, 63, 21, 67, 13, 114, 13, 115, 23, 168, 22, 163, -32, 38, -32, 33, -22)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." index="1"]
+modulate = Color(1, 0.576471, 0.290196, 1)
+mesh = SubResource("QuadMesh_b2p6u")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="." index="2"]
+modulate = Color(1, 0.576471, 0.290196, 1)
+position = Vector2(140, 0)
+mesh = SubResource("QuadMesh_o2qk2")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="." index="3"]
+modulate = Color(1, 0.576471, 0.290196, 1)
+position = Vector2(100, -5)
+mesh = SubResource("QuadMesh_0wij3")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="." index="4"]
+modulate = Color(0.788235, 0.384314, 0, 1)
+position = Vector2(150, -20)
+mesh = SubResource("QuadMesh_poene")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="." index="5"]
+modulate = Color(0.788235, 0.384314, 0, 1)
+position = Vector2(50, -20)
+mesh = SubResource("QuadMesh_poene")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="." index="6"]
+modulate = Color(0.788235, 0.384314, 0, 1)
+position = Vector2(100, -25)
+mesh = SubResource("QuadMesh_4n2mr")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="." index="7"]
+modulate = Color(0.788235, 0.384314, 0, 1)
+position = Vector2(-44.5, 26.5)
+mesh = SubResource("QuadMesh_46c2b")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="." index="8"]
+modulate = Color(0.788235, 0.384314, 0, 1)
+position = Vector2(-48, 25.5)
+mesh = SubResource("QuadMesh_5k245")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="." index="9"]
+modulate = Color(0.788235, 0.384314, 0, 1)
+position = Vector2(21.5, 26.5)
+mesh = SubResource("QuadMesh_46c2b")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="." index="10"]
+modulate = Color(0.788235, 0.384314, 0, 1)
+position = Vector2(18, 25.5)
+mesh = SubResource("QuadMesh_5k245")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="11"]
+shape = SubResource("RectangleShape2D_wr6gy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="12"]
+position = Vector2(141, -5)
+shape = SubResource("RectangleShape2D_1tl7s")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="13"]
+position = Vector2(81, -10)
+shape = SubResource("RectangleShape2D_y3pw6")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="14"]
+occluder = SubResource("OccluderPolygon2D_mqhnl")

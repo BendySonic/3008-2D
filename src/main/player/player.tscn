@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://dh2tf7jud7xm1"]
+
+[ext_resource type="Script" path="res://src/main/player/player.gd" id="1_qgdg2"]
+
+[sub_resource type="Gradient" id="Gradient_vs4tw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hm54e"]
+gradient = SubResource("Gradient_vs4tw")
+fill_from = Vector2(0.986239, 0.504587)
+fill_to = Vector2(0.16055, 0.504587)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tey8a"]
+cull_mode = 1
+polygon = PackedVector2Array(70, -39, -1, -2, -1, -5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5iiej"]
+polygon = PackedVector2Array(71, 35, -1, 4, -1, 2)
+
+[sub_resource type="SphereMesh" id="SphereMesh_afdib"]
+radius = 2.5
+height = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3kcv6"]
+radius = 2.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_14y2k"]
+polygon = PackedVector2Array(-1, -2, -2, -1, -2, 0, -2, 1, -1, 2, 1, 2, 2, 1, 2, 0, 2, -1, 1, -2)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kwe5s"]
+radius = 3.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 5
+script = ExtResource("1_qgdg2")
+
+[node name="Night" type="Node2D" parent="."]
+visible = false
+
+[node name="Polygon2D" type="Polygon2D" parent="Night"]
+z_index = -2
+position = Vector2(0, 0.533337)
+scale = Vector2(1.02222, 1.02222)
+color = Color(0.2, 0.2, 0.2, 1)
+polygon = PackedVector2Array(-527.284, -483.784, 470.544, -486.718, 471.523, 459.262, -520.436, 455.349)
+
+[node name="Flashnight" type="PointLight2D" parent="Night"]
+light_mask = 16
+position = Vector2(-0.0199987, 0)
+scale = Vector2(96.9375, 93.75)
+blend_mode = 2
+shadow_enabled = true
+shadow_item_cull_mask = 16
+texture = SubResource("GradientTexture2D_hm54e")
+offset = Vector2(0.32, 0)
+texture_scale = 0.01
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Night"]
+color = Color(0, 0, 0, 1)
+
+[node name="Left" type="LightOccluder2D" parent="Night"]
+occluder = SubResource("OccluderPolygon2D_tey8a")
+occluder_light_mask = 16
+
+[node name="Right" type="LightOccluder2D" parent="Night"]
+occluder = SubResource("OccluderPolygon2D_5iiej")
+occluder_light_mask = 16
+
+[node name="Visual" type="MeshInstance2D" parent="."]
+modulate = Color(0.435294, 0.462745, 0.447059, 1)
+position = Vector2(-1.86265e-09, 0)
+mesh = SubResource("SphereMesh_afdib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3kcv6")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_14y2k")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kwe5s")
+
+[node name="HpTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="HpTimer" to="." method="_on_hp_timer_timeout"]

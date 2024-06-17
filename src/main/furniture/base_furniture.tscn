@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj1p2hk238wdk"]
+
+[ext_resource type="Script" path="res://src/main/furniture/base_furniture.gd" id="1_v75fg"]
+
+[node name="BaseFurniture" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 4
+collision_mask = 5
+input_pickable = true
+script = ExtResource("1_v75fg")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

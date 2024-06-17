@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://br2kkr7v6jkxr"]
+
+[ext_resource type="PackedScene" uid="uid://bj1p2hk238wdk" path="res://src/main/furniture/base_furniture.tscn" id="1_tu7ep"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2hs6u"]
+radius = 25.0
+height = 50.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_gglt7"]
+radius = 20.0
+height = 40.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_374a7"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_fcasp"]
+radius = 2.5
+height = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iyw0p"]
+radius = 20.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a35pq"]
+polygon = PackedVector2Array(0, -20, -11, -17, -19, -6, -20, 4, -12, 17, 3, 19, 15, 11, 21, -2, 12, -17)
+
+[node name="Plant" instance=ExtResource("1_tu7ep")]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." index="0"]
+modulate = Color(0.52549, 0.243137, 0.211765, 1)
+mesh = SubResource("SphereMesh_2hs6u")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="." index="1"]
+modulate = Color(0.388235, 0.168627, 0.145098, 1)
+mesh = SubResource("SphereMesh_gglt7")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="." index="2"]
+modulate = Color(0, 0.627451, 0.188235, 1)
+position = Vector2(-10.5028, -6.48526)
+scale = Vector2(3.10295, 3.10295)
+mesh = SubResource("SphereMesh_374a7")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="." index="3"]
+modulate = Color(0, 0.8, 0.25098, 1)
+position = Vector2(11.4972, -2.48526)
+scale = Vector2(3.10295, 3.10295)
+mesh = SubResource("SphereMesh_374a7")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="." index="4"]
+modulate = Color(0, 0.956863, 0.305882, 1)
+position = Vector2(-6.50283, 9.51474)
+scale = Vector2(3.10295, 3.10295)
+mesh = SubResource("SphereMesh_fcasp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
+shape = SubResource("CircleShape2D_iyw0p")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="6"]
+occluder = SubResource("OccluderPolygon2D_a35pq")
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="7" groups=["navigation_polygon_source_group"]]
+visible = false
+polygon = PackedVector2Array(-4, -19, -16, -12, -22, -1, -18, 10, -7, 19, 10, 14, 20, 3, 18, -11, 3, -20)

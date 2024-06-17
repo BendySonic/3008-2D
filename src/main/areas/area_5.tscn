@@ -1,0 +1,155 @@
+[gd_scene load_steps=12 format=3 uid="uid://dmr82y4orc7sw"]
+
+[ext_resource type="PackedScene" uid="uid://chd41gs0epfxa" path="res://src/main/furniture/bed.tscn" id="2_1l0yn"]
+[ext_resource type="PackedScene" uid="uid://h2byq1e1b0k0" path="res://src/main/furniture/sofa.tscn" id="2_6hhdh"]
+[ext_resource type="PackedScene" uid="uid://cruhuyoab35g6" path="res://src/main/furniture/lamp.tscn" id="2_xmp3a"]
+[ext_resource type="PackedScene" uid="uid://4d4vja1kguyj" path="res://src/main/furniture/long_table.tscn" id="3_ddi41"]
+[ext_resource type="PackedScene" uid="uid://p2u3gugq4cof" path="res://src/main/furniture/ottoman.tscn" id="3_kbf5g"]
+[ext_resource type="PackedScene" uid="uid://g0q3oq8jxwb" path="res://src/main/furniture/nightstand.tscn" id="3_u4k63"]
+[ext_resource type="PackedScene" uid="uid://br2kkr7v6jkxr" path="res://src/main/furniture/plant.tscn" id="5_46kod"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1vqee"]
+size = Vector2(200, 500)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vklex"]
+size = Vector2(105, 5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tqmbw"]
+size = Vector2(5, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_88psk"]
+font_size = 32
+font_color = Color(0, 0, 0, 0.364706)
+
+[node name="Area5" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(-150, 0)
+mesh = SubResource("QuadMesh_1vqee")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(150, 0)
+mesh = SubResource("QuadMesh_1vqee")
+
+[node name="Line" type="Node2D" parent="."]
+modulate = Color(0, 0, 0, 0.203922)
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 222.0
+offset_right = 359.0
+offset_bottom = 267.0
+scale = Vector2(0.5, 0.5)
+text = "Спальня"
+label_settings = SubResource("LabelSettings_88psk")
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -242.0
+offset_top = -245.0
+offset_right = -11.0
+offset_bottom = -200.0
+scale = Vector2(0.5, 0.5)
+text = "Спальня"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -36.0
+offset_top = -14.0
+offset_right = 195.0
+offset_bottom = 31.0
+scale = Vector2(0.5, 0.5)
+text = "Спальня"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -250.0
+offset_top = 251.0
+offset_right = 68.0
+offset_bottom = 296.0
+scale = Vector2(0.5, 0.5)
+text = "Спокойной  ночи =)"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 51.0
+offset_top = -274.0
+offset_right = 103.0
+offset_bottom = -229.0
+scale = Vector2(0.5, 0.5)
+text = "=)"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="BaseFurniture4" parent="." instance=ExtResource("2_xmp3a")]
+position = Vector2(-190, 59)
+
+[node name="Sofa" parent="." instance=ExtResource("2_6hhdh")]
+position = Vector2(-192, 139)
+rotation = -1.5708
+
+[node name="BaseFurniture5" parent="." instance=ExtResource("2_xmp3a")]
+position = Vector2(-190, 219)
+
+[node name="Bed" parent="." instance=ExtResource("2_1l0yn")]
+position = Vector2(-145, -140)
+rotation = -1.5708
+
+[node name="Bed3" parent="." instance=ExtResource("2_1l0yn")]
+position = Vector2(-145, -20)
+rotation = -1.5708
+
+[node name="LongTable" parent="." instance=ExtResource("3_ddi41")]
+position = Vector2(202, -172)
+rotation = 1.5708
+
+[node name="Nightstand" parent="." instance=ExtResource("3_u4k63")]
+position = Vector2(206, 17)
+rotation = 1.5708
+
+[node name="Plant" parent="." instance=ExtResource("5_46kod")]
+position = Vector2(208, 192)
+
+[node name="Ottoman" parent="." instance=ExtResource("3_kbf5g")]
+position = Vector2(143, -84)

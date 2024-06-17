@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d34upyixnwfi0"]
+
+[ext_resource type="Script" path="res://src/main/food/base_food.gd" id="1_a178v"]
+
+[node name="BaseFood" type="CharacterBody2D"]
+script = ExtResource("1_a178v")

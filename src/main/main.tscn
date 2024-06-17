@@ -1,0 +1,700 @@
+[gd_scene load_steps=46 format=3 uid="uid://brsxc41yhqpuq"]
+
+[ext_resource type="PackedScene" uid="uid://dh2tf7jud7xm1" path="res://src/main/player/player.tscn" id="1_mmc8q"]
+[ext_resource type="Script" path="res://src/main/main.gd" id="1_uoa5p"]
+[ext_resource type="Script" path="res://src/main/camera.gd" id="3_7xkoi"]
+[ext_resource type="Shader" path="res://assets/ShadowShader.gdshader" id="5_d1jid"]
+[ext_resource type="Material" uid="uid://45kwpnf8gcul" path="res://assets/threat_shader.tres" id="5_rxkoo"]
+[ext_resource type="Texture2D" uid="uid://bnucogvy7hhad" path="res://assets/check.png" id="6_6gdo7"]
+[ext_resource type="Script" path="res://src/main/pause.gd" id="6_mt6pf"]
+[ext_resource type="Texture2D" uid="uid://dh4xpj3ni4xg8" path="res://assets/uncheck.png" id="7_2kj2t"]
+[ext_resource type="PackedScene" uid="uid://dkpxhsmqunq3k" path="res://src/menu/achivement.tscn" id="9_ca7n8"]
+
+[sub_resource type="Gradient" id="Gradient_ap10g"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pr58w"]
+gradient = SubResource("Gradient_ap10g")
+fill_from = Vector2(0.115385, 0)
+fill_to = Vector2(0.470085, 0.025641)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1706t"]
+shader = ExtResource("5_d1jid")
+shader_parameter/color = Color(0, 0, 0, 0.117647)
+shader_parameter/angle = 212.907
+shader_parameter/max_dist = 50.0
+shader_parameter/gradientTexture = SubResource("GradientTexture2D_pr58w")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rap0e"]
+vertices = PackedVector2Array(624, 572, -602, 559, -574, -508, 603, -522)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-486, -465, -503, 490, 550, 490, 558, -465)])
+source_geometry_mode = 2
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 12.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3eqca"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxndp"]
+bg_color = Color(1, 0.835294, 0.541176, 0.580392)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uthti"]
+bg_color = Color(0.964706, 0.690196, 0.0313726, 0.745098)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hspaw"]
+bg_color = Color(0.933333, 0, 0.364706, 0.403922)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_at16q"]
+bg_color = Color(0.211765, 0.211765, 0.211765, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lakqi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_08fvq"]
+content_margin_top = 15.0
+content_margin_right = 15.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_8cq7b"]
+font_size = 40
+font_color = Color(0.0117647, 0.0117647, 0.0117647, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hkjlq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_my7ss"]
+line_spacing = -5.0
+font_size = 25
+font_color = Color(0.411765, 0.411765, 0.411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vre38"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_upce1"]
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovad4"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.54902, 0.54902, 0.54902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_q5he2"]
+line_spacing = 0.0
+font_size = 24
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucw46"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5ksd"]
+bg_color = Color(0, 0, 0, 0.278431)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lu6hr"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_kycfr"]
+font_size = 24
+
+[sub_resource type="Theme" id="Theme_hntvq"]
+CheckBox/icons/checked = ExtResource("6_6gdo7")
+CheckBox/icons/unchecked = ExtResource("7_2kj2t")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3ic4"]
+bg_color = Color(0, 0, 0, 0.321569)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omdcb"]
+bg_color = Color(0, 0, 0, 0.258824)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06qxb"]
+bg_color = Color(0, 0, 0, 0.258824)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05g15"]
+bg_color = Color(0, 0, 0, 0.258824)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cs1j"]
+bg_color = Color(0, 0, 0, 0.258824)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc5kb"]
+bg_color = Color(0, 0, 0, 0.258824)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrkuu"]
+bg_color = Color(0.996078, 0.996078, 0.996078, 1)
+
+[sub_resource type="Animation" id="Animation_m66cv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ScreenColor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ScreenColor:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Achievement:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5uxs0"]
+resource_name = "end"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ScreenColor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(0.0915055, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ScreenColor:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xctvl"]
+resource_name = "hurt"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ScreenColor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(2.73208, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.968627, 0, 0.105882, 0.368627), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ScreenColor:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_xgg7j"]
+resource_name = "show_achievement"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Achievement:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 5.8, 6.3),
+"transitions": PackedFloat32Array(0.217638, 1, 4, 0.217638),
+"update": 0,
+"values": [Vector2(-400, 0), Vector2(0, 0), Vector2(0, 0), Vector2(-400, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Achievement:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_lt6of"]
+resource_name = "start"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ScreenColor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ScreenColor:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oywt0"]
+_data = {
+"RESET": SubResource("Animation_m66cv"),
+"end": SubResource("Animation_5uxs0"),
+"hurt": SubResource("Animation_xctvl"),
+"show_achievement": SubResource("Animation_xgg7j"),
+"start": SubResource("Animation_lt6of")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_uoa5p")
+
+[node name="Shadow" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_1706t")
+polygon = PackedVector2Array(-357, -324, -377, 417, 406, 436, 406, -316)
+
+[node name="Map" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_rap0e")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_mmc8q")]
+scale = Vector2(4, 4)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.5
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_top_margin = 0.15
+drag_right_margin = 0.15
+drag_bottom_margin = 0.15
+script = ExtResource("3_7xkoi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Effects" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Effects"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Effects/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3eqca")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Food" type="ProgressBar" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(32, 200)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_mxndp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uthti")
+step = 0.001
+value = 75.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Hp" type="ProgressBar" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(32, 200)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_hspaw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hspaw")
+value = 100.0
+fill_mode = 3
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer/AspectRatioContainer"]
+custom_minimum_size = Vector2(70, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_at16q")
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer2/AspectRatioContainer"]
+custom_minimum_size = Vector2(70, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_at16q")
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer3/AspectRatioContainer"]
+custom_minimum_size = Vector2(70, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_at16q")
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/MarginContainer4/AspectRatioContainer"]
+custom_minimum_size = Vector2(70, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_at16q")
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/Effects/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lakqi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="Time" type="Label" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_08fvq")
+text = "1 День"
+label_settings = SubResource("LabelSettings_8cq7b")
+horizontal_alignment = 1
+
+[node name="Ikea" type="Label" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hkjlq")
+text = "В IKEA"
+label_settings = SubResource("LabelSettings_my7ss")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="Tip" type="Label" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer2/VBoxContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_vre38")
+text = "Используй мышку"
+label_settings = SubResource("LabelSettings_upce1")
+horizontal_alignment = 1
+
+[node name="Tooltip" type="Label" parent="CanvasLayer/Effects/HBoxContainer/PanelContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_ovad4")
+text = "Z - переместить
+X -  использовать"
+label_settings = SubResource("LabelSettings_q5he2")
+horizontal_alignment = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="CanvasLayer/Effects/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ucw46")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Effects"]
+visible = false
+material = ExtResource("5_rxkoo")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(1, 1, 1, 0.12549)
+
+[node name="Pause" type="Control" parent="CanvasLayer/Effects"]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_mt6pf")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Effects/Pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d5ksd")
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Effects/Pause"]
+custom_minimum_size = Vector2(350, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Effects/Pause/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Пауза"
+label_settings = SubResource("LabelSettings_lu6hr")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Динамическая камера"
+label_settings = SubResource("LabelSettings_kycfr")
+
+[node name="DynamicCameraCheckBox" type="CheckBox" parent="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = SubResource("Theme_hntvq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h3ic4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h3ic4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h3ic4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_h3ic4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h3ic4")
+button_pressed = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Полный экран"
+label_settings = SubResource("LabelSettings_kycfr")
+
+[node name="FullScreenCheckBox" type="CheckBox" parent="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = SubResource("Theme_hntvq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h3ic4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h3ic4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h3ic4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_h3ic4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h3ic4")
+button_pressed = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Menu" type="Button" parent="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(130, 35)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_omdcb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_06qxb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_05g15")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5cs1j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_tc5kb")
+text = "Сдаться"
+
+[node name="Continue" type="Button" parent="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(130, 35)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_omdcb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_06qxb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_05g15")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5cs1j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_tc5kb")
+text = "Продолжить"
+
+[node name="ScreenColor" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_vrkuu")
+
+[node name="Achievement" parent="CanvasLayer" instance=ExtResource("9_ca7n8")]
+visible = false
+offset_right = 300.0
+offset_bottom = 150.0
+scale = Vector2(0.8, 0.8)
+
+[node name="DayTimer" type="Timer" parent="."]
+wait_time = 210.0
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oywt0")
+}
+
+[connection signal="bake_finished" from="Map" to="." method="_on_map_bake_finished"]
+[connection signal="toggled" from="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DynamicCameraCheckBox" to="." method="_on_dynamic_camera_check_box_toggled"]
+[connection signal="toggled" from="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/FullScreenCheckBox" to="." method="_on_full_screen_check_box_toggled"]
+[connection signal="pressed" from="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/Menu" to="CanvasLayer/Effects/Pause" method="_on_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/Effects/Pause/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/Continue" to="CanvasLayer/Effects/Pause" method="_on_continue_pressed"]
+[connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]

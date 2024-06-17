@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxrigy80vxro4"
+path="res://.godot/imported/In My Nightmares.mp3-95466c8b91bfcf6cab5d66f6ebea8948.mp3str"
+
+[deps]
+
+source_file="res://assets/music/In My Nightmares.mp3"
+dest_files=["res://.godot/imported/In My Nightmares.mp3-95466c8b91bfcf6cab5d66f6ebea8948.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

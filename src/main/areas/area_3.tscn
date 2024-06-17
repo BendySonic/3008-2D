@@ -1,0 +1,156 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmgkeo112xj44"]
+
+[ext_resource type="PackedScene" uid="uid://cruhuyoab35g6" path="res://src/main/furniture/lamp.tscn" id="2_7u3du"]
+[ext_resource type="PackedScene" uid="uid://bc6067k6ev5w2" path="res://src/main/furniture/glass_table.tscn" id="2_h0wo1"]
+[ext_resource type="PackedScene" uid="uid://br2kkr7v6jkxr" path="res://src/main/furniture/plant.tscn" id="3_hyha2"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1vqee"]
+size = Vector2(500, 200)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vklex"]
+size = Vector2(105, 5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tqmbw"]
+size = Vector2(5, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_88psk"]
+font_size = 32
+font_color = Color(0, 0, 0, 0.364706)
+
+[node name="Area3" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(0, -150)
+mesh = SubResource("QuadMesh_1vqee")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(0, 150)
+mesh = SubResource("QuadMesh_1vqee")
+
+[node name="Line" type="Node2D" parent="."]
+modulate = Color(0, 0, 0, 0.203922)
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D11" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-200, 50)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(200, 50)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D13" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(200, -50)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D14" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-200, -50)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="GlassTable" parent="." instance=ExtResource("2_h0wo1")]
+position = Vector2(-87, -117)
+
+[node name="GlassTable2" parent="." instance=ExtResource("2_h0wo1")]
+position = Vector2(-87, 117)
+
+[node name="GlassTable3" parent="." instance=ExtResource("2_h0wo1")]
+position = Vector2(87, 117)
+
+[node name="GlassTable4" parent="." instance=ExtResource("2_h0wo1")]
+position = Vector2(87, -117)
+
+[node name="BaseFurniture" parent="." instance=ExtResource("3_hyha2")]
+position = Vector2(0, -190)
+
+[node name="BaseFurniture2" parent="." instance=ExtResource("3_hyha2")]
+position = Vector2(0, 190)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 222.0
+offset_right = 359.0
+offset_bottom = 267.0
+scale = Vector2(0.5, 0.5)
+text = "Деловой офис"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -242.0
+offset_top = -245.0
+offset_right = -11.0
+offset_bottom = -200.0
+scale = Vector2(0.5, 0.5)
+text = "Деловой офис"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -58.0
+offset_top = -51.0
+offset_right = 173.0
+offset_bottom = -6.0
+scale = Vector2(0.5, 0.5)
+text = "Деловой офис"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label7" type="Label" parent="."]
+offset_left = -41.0
+offset_top = -273.0
+offset_right = 190.0
+offset_bottom = -228.0
+scale = Vector2(0.5, 0.5)
+text = "Нет конца"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="BaseFurniture3" parent="." instance=ExtResource("2_7u3du")]
+position = Vector2(0, -100)
+
+[node name="BaseFurniture4" parent="." instance=ExtResource("2_7u3du")]
+position = Vector2(0, 100)
+
+[node name="BaseFurniture5" parent="." instance=ExtResource("2_7u3du")]
+position = Vector2(-276, -46)

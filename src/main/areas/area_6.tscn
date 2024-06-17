@@ -1,0 +1,199 @@
+[gd_scene load_steps=13 format=3 uid="uid://qgl2n0hrtqd4"]
+
+[ext_resource type="PackedScene" uid="uid://cruhuyoab35g6" path="res://src/main/furniture/lamp.tscn" id="1_ij7bb"]
+[ext_resource type="PackedScene" uid="uid://h2byq1e1b0k0" path="res://src/main/furniture/sofa.tscn" id="2_ro0mw"]
+[ext_resource type="PackedScene" uid="uid://cu8lkt8pew2x3" path="res://src/main/furniture/tv.tscn" id="5_vja1x"]
+[ext_resource type="PackedScene" uid="uid://p2u3gugq4cof" path="res://src/main/furniture/ottoman.tscn" id="7_cdy21"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_tkhnw"]
+size = Vector2(200, 500)
+
+[sub_resource type="QuadMesh" id="QuadMesh_1vqee"]
+size = Vector2(200, 200)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vklex"]
+size = Vector2(105, 5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tqmbw"]
+size = Vector2(5, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_88psk"]
+font_size = 32
+font_color = Color(0, 0, 0, 0.364706)
+
+[sub_resource type="QuadMesh" id="QuadMesh_g8gv8"]
+size = Vector2(150, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxlpe"]
+size = Vector2(150, 10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_weji8"]
+polygon = PackedVector2Array(-75, -5, -75, 5, 75, 5, 75, -5)
+
+[node name="Area5" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="." groups=["navigation_polygon_source_group"]]
+visible = false
+polygon = PackedVector2Array(-236, -5, -236, 6, -84, 6, -84, -5)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(-150, 0)
+mesh = SubResource("QuadMesh_tkhnw")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(150, -150)
+mesh = SubResource("QuadMesh_1vqee")
+
+[node name="MeshInstance2D11" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(150, 150)
+mesh = SubResource("QuadMesh_1vqee")
+
+[node name="Line" type="Node2D" parent="."]
+modulate = Color(0, 0, 0, 0.203922)
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(50, -200)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D13" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(50, 200)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D14" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-50, 0)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Line"]
+modulate = Color(0.843137, 0.843137, 0.843137, 1)
+position = Vector2(-200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 222.0
+offset_right = 359.0
+offset_bottom = 267.0
+scale = Vector2(0.5, 0.5)
+text = "Гостиная"
+label_settings = SubResource("LabelSettings_88psk")
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -242.0
+offset_top = -245.0
+offset_right = -11.0
+offset_bottom = -200.0
+scale = Vector2(0.5, 0.5)
+text = "Гостиная"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -36.0
+offset_top = -14.0
+offset_right = 195.0
+offset_bottom = 31.0
+scale = Vector2(0.5, 0.5)
+text = "Гостиная"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -250.0
+offset_top = 251.0
+offset_right = 68.0
+offset_bottom = 296.0
+scale = Vector2(0.5, 0.5)
+text = "Нет конца"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 51.0
+offset_top = -274.0
+offset_right = 103.0
+offset_bottom = -229.0
+scale = Vector2(0.5, 0.5)
+text = "Твой новый дом"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="BaseFurniture4" parent="." instance=ExtResource("1_ij7bb")]
+position = Vector2(-83, -185)
+
+[node name="BaseFurniture6" parent="." instance=ExtResource("1_ij7bb")]
+position = Vector2(206, 76)
+
+[node name="BaseFurniture7" parent="." instance=ExtResource("1_ij7bb")]
+position = Vector2(206, -76)
+
+[node name="Sofa" parent="." instance=ExtResource("2_ro0mw")]
+position = Vector2(-173, -182)
+
+[node name="Sofa2" parent="." instance=ExtResource("2_ro0mw")]
+position = Vector2(-205, 173)
+rotation = -1.5708
+
+[node name="Sofa4" parent="." instance=ExtResource("2_ro0mw")]
+position = Vector2(210, 160)
+rotation = 1.5708
+
+[node name="Sofa5" parent="." instance=ExtResource("2_ro0mw")]
+position = Vector2(210, -160)
+rotation = 1.5708
+
+[node name="Ottoman" parent="." instance=ExtResource("7_cdy21")]
+position = Vector2(-78, -120)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-160, 0)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
+modulate = Color(1, 0.65098, 0.427451, 1)
+mesh = SubResource("QuadMesh_g8gv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_xxlpe")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CharacterBody2D"]
+occluder = SubResource("OccluderPolygon2D_weji8")
+
+[node name="TV" parent="." instance=ExtResource("5_vja1x")]
+position = Vector2(-163, -10)

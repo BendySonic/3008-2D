@@ -1,0 +1,233 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0r0ihr71mt38"]
+
+[ext_resource type="PackedScene" uid="uid://c1vwd33hhcne5" path="res://src/main/furniture/plank.tscn" id="1_hf26w"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1vqee"]
+size = Vector2(200, 500)
+
+[sub_resource type="QuadMesh" id="QuadMesh_xto2r"]
+size = Vector2(200, 200)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vklex"]
+size = Vector2(105, 5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tqmbw"]
+size = Vector2(5, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_88psk"]
+font_size = 32
+font_color = Color(0, 0, 0, 0.364706)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tiodc"]
+size = Vector2(120, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvprf"]
+size = Vector2(120, 120)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a3gai"]
+polygon = PackedVector2Array(-212, -210, -212, -90, -93, -89, -93, -210)
+
+[node name="Area5" type="Node2D"]
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(-150, 0)
+mesh = SubResource("QuadMesh_1vqee")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(150, -150)
+mesh = SubResource("QuadMesh_xto2r")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(150, 150)
+mesh = SubResource("QuadMesh_xto2r")
+
+[node name="Line" type="Node2D" parent="."]
+modulate = Color(0, 0, 0, 0.203922)
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Line"]
+position = Vector2(-200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Line"]
+position = Vector2(-250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="Line"]
+position = Vector2(250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="Line"]
+position = Vector2(-50, -200)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D11" type="MeshInstance2D" parent="Line"]
+position = Vector2(-50, 200)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="Line"]
+position = Vector2(-50, 0)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="Line"]
+position = Vector2(-250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="Line"]
+position = Vector2(250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Line"]
+position = Vector2(200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Line"]
+position = Vector2(200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Line"]
+position = Vector2(-200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 222.0
+offset_right = 359.0
+offset_bottom = 267.0
+scale = Vector2(0.5, 0.5)
+text = "Склад"
+label_settings = SubResource("LabelSettings_88psk")
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -242.0
+offset_top = -245.0
+offset_right = -11.0
+offset_bottom = -200.0
+scale = Vector2(0.5, 0.5)
+text = "Склад"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -14.0
+offset_right = 206.0
+offset_bottom = 31.0
+scale = Vector2(0.5, 0.5)
+text = "Склад
+"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 53.0
+offset_top = -49.0
+offset_right = 396.0
+offset_bottom = -4.0
+scale = Vector2(0.5, 0.5)
+text = "Стройматериалы"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label5" type="Label" parent="."]
+offset_left = -47.0
+offset_top = 250.0
+offset_right = 296.0
+offset_bottom = 295.0
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+text = "Стройматериалы"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Node2D2" type="Node2D" parent="."]
+rotation = 3.14159
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.0431373, 0.0431373, 0.0431373, 0.498039)
+position = Vector2(-152, -150)
+mesh = SubResource("QuadMesh_tiodc")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0.0431373, 0.0431373, 0.0431373, 0.498039)
+position = Vector2(-152, 112)
+mesh = SubResource("QuadMesh_tiodc")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+modulate = Color(0.0431373, 0.0431373, 0.0431373, 0.498039)
+position = Vector2(166, -151)
+mesh = SubResource("QuadMesh_tiodc")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(-152, -150)
+shape = SubResource("RectangleShape2D_mvprf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(-152, 113)
+shape = SubResource("RectangleShape2D_mvprf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(167, -150)
+shape = SubResource("RectangleShape2D_mvprf")
+
+[node name="Plank" parent="." instance=ExtResource("1_hf26w")]
+position = Vector2(-154, -80)
+
+[node name="Plank2" parent="." instance=ExtResource("1_hf26w")]
+position = Vector2(-152, -63)
+
+[node name="Plank3" parent="." instance=ExtResource("1_hf26w")]
+position = Vector2(95, -141)
+rotation = 1.5708
+
+[node name="Plank4" parent="." instance=ExtResource("1_hf26w")]
+position = Vector2(79, -148)
+rotation = 1.5708
+
+[node name="Plank5" parent="." instance=ExtResource("1_hf26w")]
+position = Vector2(111, 149)
+rotation = 1.5708
+
+[node name="Plank6" parent="." instance=ExtResource("1_hf26w")]
+position = Vector2(129, 149)
+rotation = 1.5708
+
+[node name="Plank7" parent="." instance=ExtResource("1_hf26w")]
+position = Vector2(150, 141)
+rotation = 1.5708
+
+[node name="Plank8" parent="." instance=ExtResource("1_hf26w")]
+position = Vector2(194, 150)
+rotation = 1.8326
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_a3gai")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(320, -1)
+occluder = SubResource("OccluderPolygon2D_a3gai")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+position = Vector2(3, 263)
+occluder = SubResource("OccluderPolygon2D_a3gai")
+
+[node name="Polygon2D3" type="Polygon2D" parent="." groups=["navigation_polygon_source_group"]]
+visible = false
+polygon = PackedVector2Array(-212, -210, -212, -90, -92, -90, -91, -210)
+
+[node name="Polygon2D4" type="Polygon2D" parent="." groups=["navigation_polygon_source_group"]]
+visible = false
+position = Vector2(321, -1)
+polygon = PackedVector2Array(-212, -210, -212, -90, -92, -90, -91, -210)
+
+[node name="Polygon2D5" type="Polygon2D" parent="." groups=["navigation_polygon_source_group"]]
+visible = false
+position = Vector2(1, 264)
+polygon = PackedVector2Array(-212, -210, -212, -90, -92, -90, -91, -210)

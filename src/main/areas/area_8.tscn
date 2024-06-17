@@ -1,0 +1,401 @@
+[gd_scene load_steps=18 format=3 uid="uid://c1cl7w6nft4jh"]
+
+[ext_resource type="PackedScene" uid="uid://cvarb6fvaeos4" path="res://src/main/food/apple.tscn" id="1_24r3k"]
+[ext_resource type="PackedScene" uid="uid://cruhuyoab35g6" path="res://src/main/furniture/lamp.tscn" id="2_k3tb4"]
+[ext_resource type="PackedScene" uid="uid://p2u3gugq4cof" path="res://src/main/furniture/ottoman.tscn" id="3_6icp1"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1vqee"]
+size = Vector2(500, 500)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vklex"]
+size = Vector2(105, 5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tqmbw"]
+size = Vector2(5, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_88psk"]
+font_size = 32
+font_color = Color(0, 0, 0, 0.364706)
+
+[sub_resource type="QuadMesh" id="QuadMesh_i4ga8"]
+size = Vector2(200, 50)
+
+[sub_resource type="QuadMesh" id="QuadMesh_77kkl"]
+size = Vector2(180, 15)
+
+[sub_resource type="QuadMesh" id="QuadMesh_gxvyt"]
+size = Vector2(10, 30)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xfeq3"]
+radius = 10.0
+height = 20.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_spnxg"]
+size = Vector2(10, 4)
+
+[sub_resource type="QuadMesh" id="QuadMesh_lj8tg"]
+size = Vector2(4, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6aod"]
+size = Vector2(200, 50)
+
+[sub_resource type="PrismMesh" id="PrismMesh_2s24c"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vwvb8"]
+polygon = PackedVector2Array(0, -225, 1, -175, 200, -175, 199, -225)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yri7i"]
+polygon = PackedVector2Array(-199, 174, -200, 224, 0, 225, 0, 175)
+
+[node name="Area5" type="Node2D"]
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+mesh = SubResource("QuadMesh_1vqee")
+
+[node name="Line" type="Node2D" parent="."]
+modulate = Color(0, 0, 0, 0.203922)
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Line"]
+position = Vector2(-200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Line"]
+position = Vector2(-250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="Line"]
+position = Vector2(250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="Line"]
+position = Vector2(-250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="Line"]
+position = Vector2(250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Line"]
+position = Vector2(200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Line"]
+position = Vector2(200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Line"]
+position = Vector2(-200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 222.0
+offset_right = 359.0
+offset_bottom = 267.0
+scale = Vector2(0.5, 0.5)
+text = "Кухня"
+label_settings = SubResource("LabelSettings_88psk")
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -242.0
+offset_top = -245.0
+offset_right = -11.0
+offset_bottom = -200.0
+scale = Vector2(0.5, 0.5)
+text = "Кухня"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -14.0
+offset_right = 206.0
+offset_bottom = 31.0
+scale = Vector2(0.5, 0.5)
+text = "Кухня"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -85.0
+offset_top = 247.0
+offset_right = 258.0
+offset_bottom = 292.0
+scale = Vector2(0.5, 0.5)
+text = "Приятного аппетита!"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 247.0
+offset_top = 85.0
+offset_right = 590.0
+offset_bottom = 130.0
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+text = "Приятного аппетита!"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0, 0.701961, 0.956863, 1)
+position = Vector2(100, -200)
+mesh = SubResource("QuadMesh_i4ga8")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.796078, 0.819608, 0.807843, 1)
+position = Vector2(100, -220)
+mesh = SubResource("QuadMesh_77kkl")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.662745, 0.698039, 0.682353, 1)
+position = Vector2(100, -210)
+mesh = SubResource("QuadMesh_gxvyt")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.564706, 0.603922, 0.588235, 1)
+position = Vector2(100, -200)
+mesh = SubResource("SphereMesh_xfeq3")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.662745, 0.698039, 0.682353, 1)
+position = Vector2(50, -210)
+mesh = SubResource("QuadMesh_gxvyt")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.564706, 0.603922, 0.588235, 1)
+position = Vector2(50, -200)
+mesh = SubResource("SphereMesh_xfeq3")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.662745, 0.698039, 0.682353, 1)
+position = Vector2(150, -210)
+mesh = SubResource("QuadMesh_gxvyt")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.564706, 0.603922, 0.588235, 1)
+position = Vector2(150, -200)
+mesh = SubResource("SphereMesh_xfeq3")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(31, -169)
+mesh = SubResource("QuadMesh_spnxg")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(28, -173)
+mesh = SubResource("QuadMesh_lj8tg")
+
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(76, -169)
+mesh = SubResource("QuadMesh_spnxg")
+
+[node name="MeshInstance2D13" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(73, -173)
+mesh = SubResource("QuadMesh_lj8tg")
+
+[node name="MeshInstance2D15" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(123, -169)
+mesh = SubResource("QuadMesh_spnxg")
+
+[node name="MeshInstance2D16" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(120, -173)
+mesh = SubResource("QuadMesh_lj8tg")
+
+[node name="MeshInstance2D18" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(167, -170)
+mesh = SubResource("QuadMesh_spnxg")
+
+[node name="MeshInstance2D19" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(164, -174)
+mesh = SubResource("QuadMesh_lj8tg")
+
+[node name="Node2D2" type="Node2D" parent="."]
+rotation = 3.14159
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0, 0.701961, 0.956863, 1)
+position = Vector2(100, -200)
+mesh = SubResource("QuadMesh_i4ga8")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.796078, 0.819608, 0.807843, 1)
+position = Vector2(100, -220)
+mesh = SubResource("QuadMesh_77kkl")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.662745, 0.698039, 0.682353, 1)
+position = Vector2(100, -210)
+mesh = SubResource("QuadMesh_gxvyt")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.564706, 0.603922, 0.588235, 1)
+position = Vector2(100, -200)
+mesh = SubResource("SphereMesh_xfeq3")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.662745, 0.698039, 0.682353, 1)
+position = Vector2(50, -210)
+mesh = SubResource("QuadMesh_gxvyt")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.564706, 0.603922, 0.588235, 1)
+position = Vector2(50, -200)
+mesh = SubResource("SphereMesh_xfeq3")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.662745, 0.698039, 0.682353, 1)
+position = Vector2(150, -210)
+mesh = SubResource("QuadMesh_gxvyt")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.564706, 0.603922, 0.588235, 1)
+position = Vector2(150, -200)
+mesh = SubResource("SphereMesh_xfeq3")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(31, -169)
+mesh = SubResource("QuadMesh_spnxg")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(28, -173)
+mesh = SubResource("QuadMesh_lj8tg")
+
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(76, -169)
+mesh = SubResource("QuadMesh_spnxg")
+
+[node name="MeshInstance2D13" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(73, -173)
+mesh = SubResource("QuadMesh_lj8tg")
+
+[node name="MeshInstance2D15" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(123, -169)
+mesh = SubResource("QuadMesh_spnxg")
+
+[node name="MeshInstance2D16" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(120, -173)
+mesh = SubResource("QuadMesh_lj8tg")
+
+[node name="MeshInstance2D18" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(167, -170)
+mesh = SubResource("QuadMesh_spnxg")
+
+[node name="MeshInstance2D19" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0.360784, 0.360784, 0.360784, 1)
+position = Vector2(164, -174)
+mesh = SubResource("QuadMesh_lj8tg")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(100, -200)
+shape = SubResource("RectangleShape2D_e6aod")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-100, 200)
+shape = SubResource("RectangleShape2D_e6aod")
+
+[node name="Apple" parent="." instance=ExtResource("1_24r3k")]
+position = Vector2(18, -190)
+
+[node name="Apple2" parent="." instance=ExtResource("1_24r3k")]
+position = Vector2(30, -184)
+
+[node name="Apple3" parent="." instance=ExtResource("1_24r3k")]
+position = Vector2(180, -188)
+
+[node name="Apple4" parent="." instance=ExtResource("1_24r3k")]
+position = Vector2(-192, 192)
+
+[node name="Apple5" parent="." instance=ExtResource("1_24r3k")]
+position = Vector2(-16, 187)
+
+[node name="Apple6" parent="." instance=ExtResource("1_24r3k")]
+position = Vector2(-129, 201)
+
+[node name="BaseFurniture" parent="." instance=ExtResource("2_k3tb4")]
+position = Vector2(24, 199)
+
+[node name="BaseFurniture2" parent="." instance=ExtResource("2_k3tb4")]
+position = Vector2(-24, -199)
+
+[node name="Ottoman" parent="." instance=ExtResource("3_6icp1")]
+position = Vector2(-93, 80)
+
+[node name="Ottoman2" parent="." instance=ExtResource("3_6icp1")]
+position = Vector2(87, 44)
+
+[node name="Ottoman3" parent="." instance=ExtResource("3_6icp1")]
+position = Vector2(-52, -104)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0431373)
+position = Vector2(50, -121)
+rotation = -2.74666
+scale = Vector2(37.5, 46.5)
+mesh = SubResource("PrismMesh_2s24c")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0431373)
+position = Vector2(1.99999, -67)
+rotation = -2.16687
+scale = Vector2(37.5, 46.5)
+mesh = SubResource("PrismMesh_2s24c")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0431373)
+position = Vector2(-72, -32)
+rotation = -1.90369
+scale = Vector2(37.5, 46.5)
+mesh = SubResource("PrismMesh_2s24c")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0431373)
+position = Vector2(-140, -16)
+rotation = -1.6301
+scale = Vector2(37.5, 46.5)
+mesh = SubResource("PrismMesh_2s24c")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0431373)
+position = Vector2(-214, -24)
+rotation = -0.85268
+scale = Vector2(37.5, 46.5)
+mesh = SubResource("PrismMesh_2s24c")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0431373)
+position = Vector2(-248, -79)
+rotation = 0.0863643
+scale = Vector2(37.5, 46.5)
+mesh = SubResource("PrismMesh_2s24c")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_vwvb8")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_yri7i")
+
+[node name="Polygon2D" type="Polygon2D" parent="." groups=["navigation_polygon_source_group"]]
+visible = false
+polygon = PackedVector2Array(1, -225, 1, -175, 201, -175, 201, -226)
+
+[node name="Polygon2D2" type="Polygon2D" parent="." groups=["navigation_polygon_source_group"]]
+visible = false
+position = Vector2(-201, 399)
+polygon = PackedVector2Array(1, -225, 1, -175, 201, -175, 201, -226)

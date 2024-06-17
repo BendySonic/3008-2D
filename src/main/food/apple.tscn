@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvarb6fvaeos4"]
+
+[ext_resource type="PackedScene" uid="uid://d34upyixnwfi0" path="res://src/main/food/base_food.tscn" id="1_keod4"]
+[ext_resource type="Resource" uid="uid://c5qfaoal8fts" path="res://src/main/food/apple.tres" id="2_l5dv3"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0sync"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jmdk"]
+
+[node name="Apple" instance=ExtResource("1_keod4")]
+collision_layer = 8
+collision_mask = 8
+input_pickable = true
+item_resource = ExtResource("2_l5dv3")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." index="0"]
+modulate = Color(1, 0.231373, 0.360784, 1)
+position = Vector2(-2, 0)
+mesh = SubResource("SphereMesh_0sync")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="." index="1"]
+modulate = Color(1, 0.231373, 0.360784, 1)
+position = Vector2(1, 0)
+mesh = SubResource("SphereMesh_0sync")
+
+[node name="Polygon2D2" type="Polygon2D" parent="." index="2"]
+position = Vector2(-1, 2)
+rotation = -0.52214
+color = Color(1, 0.580392, 0.317647, 1)
+polygon = PackedVector2Array(2.36296, -2.10153, 0.261436, -4.46449, -1.60279, -3.22972, 0.498736, -0.866754)
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="3"]
+position = Vector2(-1, 2)
+rotation = -0.52214
+color = Color(0, 0.686275, 0.345098, 1)
+polygon = PackedVector2Array(0, -1, 4, -4, 7, -4, 10, -3, 8, 0, 4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
+shape = SubResource("RectangleShape2D_4jmdk")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

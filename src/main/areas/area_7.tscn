@@ -1,0 +1,225 @@
+[gd_scene load_steps=12 format=3 uid="uid://bbcxkr42r6n6d"]
+
+[ext_resource type="PackedScene" uid="uid://p2u3gugq4cof" path="res://src/main/furniture/ottoman.tscn" id="3_0wjlw"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kkdfs"]
+polygon = PackedVector2Array(-12, -49, -37, -34, -50, -10, -46, 21, -21, 45, 14, 48, 41, 29, 50, -8, 38, -34, 9, -50)
+
+[sub_resource type="SphereMesh" id="SphereMesh_grb1e"]
+radius = 50.0
+height = 100.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_k5716"]
+radius = 10.0
+height = 20.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_mrfdr"]
+size = Vector2(10, 30)
+
+[sub_resource type="QuadMesh" id="QuadMesh_0j8xn"]
+size = Vector2(20, 25)
+
+[sub_resource type="QuadMesh" id="QuadMesh_batng"]
+size = Vector2(15, 20)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bggak"]
+font_size = 32
+font_color = Color(0, 0, 0, 0.364706)
+
+[sub_resource type="PrismMesh" id="PrismMesh_apd0r"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_cc0lo"]
+size = Vector2(50, 5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xj0nd"]
+radius = 55.0
+
+[node name="Area7" type="Node2D"]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_kkdfs")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.8, 0.8, 0.8, 1)
+mesh = SubResource("SphereMesh_grb1e")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="."]
+modulate = Color(0.631373, 0.631373, 0.631373, 1)
+mesh = SubResource("SphereMesh_k5716")
+
+[node name="MeshInstance2D11" type="MeshInstance2D" parent="."]
+modulate = Color(0.482353, 0.482353, 0.482353, 1)
+mesh = SubResource("QuadMesh_mrfdr")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+modulate = Color(0.890196, 0.890196, 0.890196, 1)
+position = Vector2(-45, 0)
+mesh = SubResource("QuadMesh_0j8xn")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0.552941, 0.898039, 1, 1)
+position = Vector2(-45, 0)
+mesh = SubResource("QuadMesh_batng")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="."]
+modulate = Color(0.890196, 0.890196, 0.890196, 1)
+position = Vector2(45, 0)
+mesh = SubResource("QuadMesh_0j8xn")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="."]
+modulate = Color(0.552941, 0.898039, 1, 1)
+position = Vector2(45, 0)
+mesh = SubResource("QuadMesh_batng")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="."]
+modulate = Color(0.890196, 0.890196, 0.890196, 1)
+position = Vector2(0, -45)
+rotation = 1.5708
+mesh = SubResource("QuadMesh_0j8xn")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="."]
+modulate = Color(0.552941, 0.898039, 1, 1)
+position = Vector2(0, -45)
+rotation = 1.5708
+mesh = SubResource("QuadMesh_batng")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="."]
+modulate = Color(0.890196, 0.890196, 0.890196, 1)
+position = Vector2(0, 45)
+rotation = 1.5708
+mesh = SubResource("QuadMesh_0j8xn")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="."]
+modulate = Color(0.552941, 0.898039, 1, 1)
+position = Vector2(0, 45)
+rotation = 1.5708
+mesh = SubResource("QuadMesh_batng")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -83.0
+offset_right = 173.0
+offset_bottom = -38.0
+scale = Vector2(0.5, 0.5)
+text = "Консультация"
+label_settings = SubResource("LabelSettings_bggak")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -43.0
+offset_top = 60.0
+offset_right = 136.0
+offset_bottom = 105.0
+scale = Vector2(0.5, 0.5)
+text = "Навигация"
+label_settings = SubResource("LabelSettings_bggak")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 0.0666667)
+position = Vector2(-2, -105)
+rotation = -0.34005
+scale = Vector2(27.5, 26.5)
+mesh = SubResource("PrismMesh_apd0r")
+
+[node name="MeshInstance2D13" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 0.0666667)
+position = Vector2(-19, -146)
+rotation = -0.597254
+scale = Vector2(27.5, 26.5)
+mesh = SubResource("PrismMesh_apd0r")
+
+[node name="MeshInstance2D14" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 0.0666667)
+position = Vector2(-46, -174)
+rotation = -0.729145
+scale = Vector2(27.5, 26.5)
+mesh = SubResource("PrismMesh_apd0r")
+
+[node name="MeshInstance2D15" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 0.0666667)
+position = Vector2(-80, -202)
+rotation = -0.975218
+scale = Vector2(27.5, 26.5)
+mesh = SubResource("PrismMesh_apd0r")
+
+[node name="MeshInstance2D16" type="MeshInstance2D" parent="Node2D"]
+modulate = Color(0, 0, 0, 0.0666667)
+position = Vector2(-121, -217)
+rotation = -1.65579
+scale = Vector2(27.5, 26.5)
+mesh = SubResource("PrismMesh_apd0r")
+
+[node name="Node2D2" type="Node2D" parent="."]
+rotation = 3.14159
+
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0, 0, 0, 0.0666667)
+position = Vector2(-2, -105)
+rotation = -0.34005
+scale = Vector2(27.5, 26.5)
+mesh = SubResource("PrismMesh_apd0r")
+
+[node name="MeshInstance2D13" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0, 0, 0, 0.0666667)
+position = Vector2(-19, -146)
+rotation = -0.597254
+scale = Vector2(27.5, 26.5)
+mesh = SubResource("PrismMesh_apd0r")
+
+[node name="MeshInstance2D14" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0, 0, 0, 0.0666667)
+position = Vector2(-46, -174)
+rotation = -0.729145
+scale = Vector2(27.5, 26.5)
+mesh = SubResource("PrismMesh_apd0r")
+
+[node name="MeshInstance2D15" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0, 0, 0, 0.0666667)
+position = Vector2(-80, -202)
+rotation = -0.975218
+scale = Vector2(27.5, 26.5)
+mesh = SubResource("PrismMesh_apd0r")
+
+[node name="MeshInstance2D16" type="MeshInstance2D" parent="Node2D2"]
+modulate = Color(0, 0, 0, 0.0666667)
+position = Vector2(-121, -217)
+rotation = -1.65579
+scale = Vector2(27.5, 26.5)
+mesh = SubResource("PrismMesh_apd0r")
+
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.203922)
+position = Vector2(227.5, -250)
+mesh = SubResource("QuadMesh_cc0lo")
+
+[node name="MeshInstance2D14" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.203922)
+position = Vector2(250, -222.5)
+rotation = 1.5708
+mesh = SubResource("QuadMesh_cc0lo")
+
+[node name="MeshInstance2D15" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.203922)
+position = Vector2(-250, 222.5)
+rotation = 1.5708
+mesh = SubResource("QuadMesh_cc0lo")
+
+[node name="MeshInstance2D13" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.203922)
+position = Vector2(-227.5, 250)
+mesh = SubResource("QuadMesh_cc0lo")
+
+[node name="Ottoman" parent="." instance=ExtResource("3_0wjlw")]
+position = Vector2(-200, 160)
+
+[node name="Ottoman3" parent="." instance=ExtResource("3_0wjlw")]
+position = Vector2(184, -207)
+
+[node name="Ottoman4" parent="." instance=ExtResource("3_0wjlw")]
+position = Vector2(205, 86)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_xj0nd")

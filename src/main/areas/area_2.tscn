@@ -1,0 +1,149 @@
+[gd_scene load_steps=10 format=3 uid="uid://cqr6as5ujkktb"]
+
+[ext_resource type="PackedScene" uid="uid://ykiorutjxpm3" path="res://src/main/furniture/long_black_sofa.tscn" id="1_2php2"]
+[ext_resource type="PackedScene" uid="uid://br2kkr7v6jkxr" path="res://src/main/furniture/plant.tscn" id="1_a1svj"]
+[ext_resource type="PackedScene" uid="uid://bc6067k6ev5w2" path="res://src/main/furniture/glass_table.tscn" id="2_a1xnp"]
+[ext_resource type="PackedScene" uid="uid://d37ndgfdt02si" path="res://src/main/furniture/black_sofa.tscn" id="4_8d1wi"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1vqee"]
+size = Vector2(300, 200)
+
+[sub_resource type="QuadMesh" id="QuadMesh_2jged"]
+size = Vector2(100, 200)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vklex"]
+size = Vector2(105, 5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tqmbw"]
+size = Vector2(5, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_88psk"]
+font_size = 32
+font_color = Color(0, 0, 0, 0.364706)
+
+[node name="Area2" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(-100, -150)
+mesh = SubResource("QuadMesh_1vqee")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(100, 150)
+mesh = SubResource("QuadMesh_1vqee")
+
+[node name="MeshInstance2D11" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(200, -150)
+mesh = SubResource("QuadMesh_2jged")
+
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(-200, 150)
+mesh = SubResource("QuadMesh_2jged")
+
+[node name="Line" type="Node2D" parent="."]
+modulate = Color(0, 0, 0, 0.203922)
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Line"]
+position = Vector2(-200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Line"]
+position = Vector2(-250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="Line"]
+position = Vector2(250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="Line"]
+position = Vector2(-250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="Line"]
+position = Vector2(250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Line"]
+position = Vector2(200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D13" type="MeshInstance2D" parent="Line"]
+position = Vector2(200, -50)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D16" type="MeshInstance2D" parent="Line"]
+position = Vector2(200, 50)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D14" type="MeshInstance2D" parent="Line"]
+position = Vector2(-200, 50)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D15" type="MeshInstance2D" parent="Line"]
+position = Vector2(-200, -50)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Line"]
+position = Vector2(200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Line"]
+position = Vector2(-200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="LongBlackSofa" parent="." instance=ExtResource("1_2php2")]
+position = Vector2(-104, -180)
+
+[node name="LongBlackSofa2" parent="." instance=ExtResource("1_2php2")]
+position = Vector2(104, 180)
+rotation = 3.14159
+
+[node name="GlassTable" parent="." instance=ExtResource("2_a1xnp")]
+position = Vector2(-87, -117)
+
+[node name="GlassTable2" parent="." instance=ExtResource("2_a1xnp")]
+position = Vector2(87, 117)
+
+[node name="BaseFurniture" parent="." instance=ExtResource("1_a1svj")]
+position = Vector2(0, -190)
+
+[node name="BaseFurniture2" parent="." instance=ExtResource("1_a1svj")]
+position = Vector2(0, 190)
+
+[node name="BlackSofa" parent="." instance=ExtResource("4_8d1wi")]
+position = Vector2(190, -150)
+rotation = 1.5708
+
+[node name="BlackSofa2" parent="." instance=ExtResource("4_8d1wi")]
+position = Vector2(-190, 150)
+rotation = -1.5708
+
+[node name="Label" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 222.0
+offset_right = 359.0
+offset_bottom = 267.0
+scale = Vector2(0.5, 0.5)
+text = "Деловой офис"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -242.0
+offset_top = -245.0
+offset_right = -11.0
+offset_bottom = -200.0
+scale = Vector2(0.5, 0.5)
+text = "Деловой офис"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -68.0
+offset_top = -52.0
+offset_right = 163.0
+offset_bottom = -7.0
+scale = Vector2(0.5, 0.5)
+text = "Деловой офис"
+label_settings = SubResource("LabelSettings_88psk")

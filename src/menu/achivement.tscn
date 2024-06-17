@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkpxhsmqunq3k"]
+
+[ext_resource type="Script" path="res://src/menu/achivement.gd" id="1_4ph81"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jw7nh"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sd5hh"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_3n6d2"]
+font_size = 22
+
+[node name="Achievements" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 150)
+offset_right = 32.0
+offset_bottom = 74.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jw7nh")
+script = ExtResource("1_4ph81")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Ноч"
+label_settings = SubResource("LabelSettings_sd5hh")
+
+[node name="Desc" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Ночfw"
+label_settings = SubResource("LabelSettings_3n6d2")
+
+[node name="Status" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6

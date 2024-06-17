@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://chd41gs0epfxa"]
+
+[ext_resource type="PackedScene" uid="uid://bj1p2hk238wdk" path="res://src/main/furniture/base_furniture.tscn" id="1_u7sta"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_t6psj"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_xqpe1"]
+size = Vector2(85, 120)
+
+[sub_resource type="QuadMesh" id="QuadMesh_lk0wt"]
+size = Vector2(75, 100)
+
+[sub_resource type="QuadMesh" id="QuadMesh_p7su4"]
+size = Vector2(30, 30)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ujj2e"]
+polygon = PackedVector2Array(-43, -54, -43, 54, -46, 58, -41, 63, -35, 60, 36, 60, 40, 62, 45, 59, 43, 54, 42, -54, 46, -59, 40, -63, 35, -60, -36, -59, -40, -63, -45, -59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glmi6"]
+size = Vector2(80, 115)
+
+[node name="Bed" instance=ExtResource("1_u7sta")]
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="0" groups=["navigation_polygon_source_group"]]
+visible = false
+polygon = PackedVector2Array(-42, -58, -41, 57, 42, 58, 41, -58)
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="." index="1"]
+modulate = Color(0.796078, 0.392157, 0, 1)
+position = Vector2(40, 58)
+mesh = SubResource("SphereMesh_t6psj")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="." index="2"]
+modulate = Color(0.796078, 0.392157, 0, 1)
+position = Vector2(-40, 58)
+mesh = SubResource("SphereMesh_t6psj")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="." index="3"]
+modulate = Color(0.796078, 0.392157, 0, 1)
+position = Vector2(-40, -58)
+mesh = SubResource("SphereMesh_t6psj")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="." index="4"]
+modulate = Color(0.796078, 0.392157, 0, 1)
+position = Vector2(40, -58)
+mesh = SubResource("SphereMesh_t6psj")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="." index="5"]
+modulate = Color(0.819608, 0.815686, 0.823529, 1)
+mesh = SubResource("QuadMesh_xqpe1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." index="6"]
+modulate = Color(1, 0.584314, 0.247059, 1)
+mesh = SubResource("QuadMesh_lk0wt")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="." index="7"]
+modulate = Color(0.988235, 0.858824, 0, 1)
+position = Vector2(-26, -43)
+rotation = -0.0462144
+mesh = SubResource("QuadMesh_p7su4")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="." index="8"]
+modulate = Color(0.988235, 0.858824, 0, 1)
+position = Vector2(24, -41)
+rotation = -0.0462144
+mesh = SubResource("QuadMesh_p7su4")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="." index="9"]
+modulate = Color(0.972549, 0.8, 0, 1)
+position = Vector2(-1, -41)
+rotation = 0.162389
+mesh = SubResource("QuadMesh_p7su4")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="10"]
+occluder = SubResource("OccluderPolygon2D_ujj2e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="11"]
+shape = SubResource("RectangleShape2D_glmi6")

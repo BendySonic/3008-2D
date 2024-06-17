@@ -1,0 +1,75 @@
+[gd_scene load_steps=15 format=3 uid="uid://bttci7vwjrgeg"]
+
+[ext_resource type="AudioStream" uid="uid://cxrigy80vxro4" path="res://assets/music/In My Nightmares.mp3" id="1_1ic6l"]
+[ext_resource type="Script" path="res://src/music.gd" id="1_mgeg8"]
+[ext_resource type="AudioStream" uid="uid://brgoy8elwproc" path="res://assets/music/Monday.mp3" id="2_mjxax"]
+[ext_resource type="AudioStream" uid="uid://gyw4gqlqqhrb" path="res://assets/music/walk.mp3" id="3_nj2xf"]
+[ext_resource type="AudioStream" uid="uid://drtycgxfmktn4" path="res://assets/music/Tuesday.mp3" id="4_hv25i"]
+[ext_resource type="AudioStream" uid="uid://bumo3sgsnwiln" path="res://assets/music/turn_off.mp3" id="5_e8p4d"]
+[ext_resource type="AudioStream" uid="uid://dv4iymuiy1r18" path="res://assets/music/Wednesday.mp3" id="5_pk8ju"]
+[ext_resource type="AudioStream" uid="uid://c2hfvw6obwtf6" path="res://assets/music/Thursady.mp3" id="6_ot6gd"]
+[ext_resource type="AudioStream" uid="uid://bc1binff5xgd7" path="res://assets/music/turn_on.mp3" id="6_us22v"]
+[ext_resource type="AudioStream" uid="uid://c61h7pgihemx0" path="res://assets/music/set.mp3" id="7_4qcki"]
+[ext_resource type="AudioStream" uid="uid://c4aq77rceedh5" path="res://assets/music/Friday.mp3" id="7_ho2wm"]
+[ext_resource type="AudioStream" uid="uid://cmmaqwv2wild3" path="res://assets/music/pick_up.mp3" id="8_ss8dd"]
+[ext_resource type="AudioStream" uid="uid://047d08253qoy" path="res://assets/music/Punch.mp3" id="13_1qyla"]
+[ext_resource type="AudioStream" uid="uid://cmyqjt7gsjmc1" path="res://assets/music/doors.mp3" id="14_imlp0"]
+
+[node name="AudioStreamPlayer" type="Node"]
+script = ExtResource("1_mgeg8")
+
+[node name="Menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_1ic6l")
+volume_db = -1.0
+
+[node name="Monday" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mjxax")
+volume_db = -5.0
+
+[node name="Tuesday" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_hv25i")
+volume_db = -5.0
+
+[node name="Wednesday" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_pk8ju")
+volume_db = -5.0
+
+[node name="Thursday" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ot6gd")
+volume_db = -5.0
+
+[node name="Friday" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ho2wm")
+volume_db = -5.0
+
+[node name="Walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nj2xf")
+volume_db = -2.0
+pitch_scale = 2.0
+
+[node name="TurnOff" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_e8p4d")
+
+[node name="TurnOn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_us22v")
+
+[node name="Set" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_4qcki")
+volume_db = -8.0
+
+[node name="PickUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ss8dd")
+volume_db = 5.0
+
+[node name="Punch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_1qyla")
+
+[node name="Doors" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_imlp0")
+
+[connection signal="finished" from="Monday" to="." method="_on_monday_finished"]
+[connection signal="finished" from="Tuesday" to="." method="_on_monday_finished"]
+[connection signal="finished" from="Wednesday" to="." method="_on_monday_finished"]
+[connection signal="finished" from="Thursday" to="." method="_on_monday_finished"]
+[connection signal="finished" from="Friday" to="." method="_on_monday_finished"]
+[connection signal="finished" from="Walk" to="." method="_on_walk_finished"]

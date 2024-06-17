@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu8lkt8pew2x3"]
+
+[ext_resource type="PackedScene" uid="uid://bj1p2hk238wdk" path="res://src/main/furniture/base_furniture.tscn" id="1_tagsf"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_iqvlf"]
+size = Vector2(90, 10)
+
+[sub_resource type="QuadMesh" id="QuadMesh_uk5tl"]
+size = Vector2(100, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pl16c"]
+size = Vector2(95, 10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hxa1u"]
+polygon = PackedVector2Array(-50, -5, -50, 5, 50, 5, 50, -5)
+
+[node name="TV" instance=ExtResource("1_tagsf")]
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="." index="0"]
+modulate = Color(0.0509804, 0.662745, 0.882353, 1)
+position = Vector2(0, -2)
+mesh = SubResource("QuadMesh_iqvlf")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." index="1"]
+modulate = Color(0.117647, 0.117647, 0.117647, 1)
+mesh = SubResource("QuadMesh_uk5tl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("RectangleShape2D_pl16c")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="3"]
+occluder = SubResource("OccluderPolygon2D_hxa1u")
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="4" groups=["navigation_polygon_source_group"]]
+visible = false
+polygon = PackedVector2Array(-49, -6, -49, 5, 48, 5, 49, -6)

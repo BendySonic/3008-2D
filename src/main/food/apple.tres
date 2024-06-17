@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://c5qfaoal8fts"]
+
+[ext_resource type="Texture2D" uid="uid://cmvg8cpf608v6" path="res://assets/apple.png" id="1_4xq71"]
+[ext_resource type="Script" path="res://src/main/food/item_resource.gd" id="1_uknm8"]
+
+[resource]
+script = ExtResource("1_uknm8")
+food = 10.0
+scene = "res://src/main/food/apple.tscn"
+icon = ExtResource("1_4xq71")

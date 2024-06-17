@@ -1,0 +1,196 @@
+[gd_scene load_steps=9 format=3 uid="uid://1wlyan8wo324"]
+
+[ext_resource type="PackedScene" uid="uid://bfnudjg187dx4" path="res://src/main/furniture/long_plant.tscn" id="1_eqxbo"]
+[ext_resource type="PackedScene" uid="uid://br2kkr7v6jkxr" path="res://src/main/furniture/plant.tscn" id="2_ovhua"]
+[ext_resource type="PackedScene" uid="uid://ffsbcdcbu46v" path="res://src/main/furniture/green_lamp.tscn" id="3_g3hmv"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1vqee"]
+size = Vector2(150, 500)
+
+[sub_resource type="QuadMesh" id="QuadMesh_xto2r"]
+size = Vector2(200, 200)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vklex"]
+size = Vector2(105, 5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tqmbw"]
+size = Vector2(5, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_88psk"]
+font_size = 32
+font_color = Color(0, 0, 0, 0.364706)
+
+[node name="Area5" type="Node2D"]
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(-175, 0)
+mesh = SubResource("QuadMesh_1vqee")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+position = Vector2(175, 0)
+mesh = SubResource("QuadMesh_1vqee")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.0352941)
+mesh = SubResource("QuadMesh_xto2r")
+
+[node name="Line" type="Node2D" parent="."]
+modulate = Color(0, 0, 0, 0.203922)
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Line"]
+position = Vector2(-200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Line"]
+position = Vector2(-250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="Line"]
+position = Vector2(250, -197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="Line"]
+position = Vector2(-100, -200)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="Line"]
+position = Vector2(100, -200)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D11" type="MeshInstance2D" parent="Line"]
+position = Vector2(-100, 200)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D13" type="MeshInstance2D" parent="Line"]
+position = Vector2(100, 200)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="Line"]
+position = Vector2(-250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="Line"]
+position = Vector2(250, 197.5)
+mesh = SubResource("QuadMesh_tqmbw")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Line"]
+position = Vector2(200, -250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Line"]
+position = Vector2(200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Line"]
+position = Vector2(-200, 250)
+mesh = SubResource("QuadMesh_vklex")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 222.0
+offset_right = 359.0
+offset_bottom = 267.0
+scale = Vector2(0.5, 0.5)
+text = "Сад"
+label_settings = SubResource("LabelSettings_88psk")
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -242.0
+offset_top = -245.0
+offset_right = -11.0
+offset_bottom = -200.0
+scale = Vector2(0.5, 0.5)
+text = "Сад"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -14.0
+offset_right = 206.0
+offset_bottom = 31.0
+scale = Vector2(0.5, 0.5)
+text = "Сад"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -96.0
+offset_top = -124.0
+offset_right = 247.0
+offset_bottom = -79.0
+scale = Vector2(0.5, 0.5)
+text = "Природа"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Label5" type="Label" parent="."]
+offset_left = -99.0
+offset_top = 244.0
+offset_right = 244.0
+offset_bottom = 289.0
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+text = "Зелень"
+label_settings = SubResource("LabelSettings_88psk")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Node2D2" type="Node2D" parent="."]
+rotation = 3.14159
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Polygon2D3" type="Polygon2D" parent="." groups=["navigation_polygon_source_group"]]
+visible = false
+polygon = PackedVector2Array(-212, -210, -212, -90, -92, -90, -91, -210)
+
+[node name="Polygon2D4" type="Polygon2D" parent="." groups=["navigation_polygon_source_group"]]
+visible = false
+position = Vector2(321, -1)
+polygon = PackedVector2Array(-212, -210, -212, -90, -92, -90, -91, -210)
+
+[node name="Polygon2D5" type="Polygon2D" parent="." groups=["navigation_polygon_source_group"]]
+visible = false
+position = Vector2(1, 264)
+polygon = PackedVector2Array(-212, -210, -212, -90, -92, -90, -91, -210)
+
+[node name="LongPlant" parent="." instance=ExtResource("1_eqxbo")]
+position = Vector2(-8, 60)
+
+[node name="LongPlant2" parent="." instance=ExtResource("1_eqxbo")]
+position = Vector2(-8, -60)
+
+[node name="LongPlant3" parent="." instance=ExtResource("1_eqxbo")]
+position = Vector2(-200, 0)
+rotation = 1.5708
+
+[node name="LongPlant4" parent="." instance=ExtResource("1_eqxbo")]
+position = Vector2(200, 0)
+rotation = 1.5708
+
+[node name="Plant" parent="." instance=ExtResource("2_ovhua")]
+position = Vector2(180, 190)
+rotation = 1.5708
+
+[node name="Plant2" parent="." instance=ExtResource("2_ovhua")]
+position = Vector2(180, -190)
+rotation = 1.5708
+
+[node name="Plant3" parent="." instance=ExtResource("2_ovhua")]
+position = Vector2(-180, -190)
+rotation = 1.5708
+
+[node name="Plant4" parent="." instance=ExtResource("2_ovhua")]
+position = Vector2(-180, 190)
+rotation = 1.5708
+
+[node name="GreenLamp" parent="." instance=ExtResource("3_g3hmv")]
+position = Vector2(-130, 0)
+
+[node name="GreenLamp2" parent="." instance=ExtResource("3_g3hmv")]
+position = Vector2(130, 0)
