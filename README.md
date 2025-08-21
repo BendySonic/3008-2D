@@ -1,2 +1,2 @@
 # 3008-2D
- A 2D demo game about SCP-3008
+https://itsmebuzzy.itch.io/3008-2d
